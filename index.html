@@ -352,12 +352,15 @@
       <div class="column">
         <h2 class="subtitle" style="margin-top: 0;">
           Starting from a small set of frames, Flowception learns to flow existing frames while
-          potentially inserting new frames anywhere in the sequence.
+          potentially inserting new frames anywhere in the sequence.<br>
           Since the latest insertions happens at \( \tau_g = 1 \), the maximum number of steps
-          is capped to \( \frac{2}{h} \) where \( h \) is the sampling step size.
+          is capped to \( \frac{2}{h} \) where \( h \) is the sampling step size.<br>
+          During training, frames are deleted with uniform probability in $[-1,0]$, and each existing frame predicts the missing number of frames in the gap with its sucessor.<br>
+          
         </h2>
       </div>
     </div>
+
 
 
       <div class="columns is-vcentered is-centered">
@@ -384,6 +387,36 @@
   </div>
 </section>
 <!-- End schedule comparison -->
+
+
+<!-- capabilities -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Capabilities</h2>
+
+      <div class="columns is-vcentered is-variable is-6">
+      <!-- Figure column -->
+      <div class="column is-narrow">
+        <div class="publication-banner">
+          <figure class="image" style="max-width: 400px; margin: 0 auto;">
+            <img src="static/images/flowception_capabilities.png"
+                alt="Flowception capabilities"
+                loading="lazy">
+          </figure>
+        </div>
+      </div>
+
+      <!-- Text column -->
+      <div class="column">
+        <h2 class="subtitle" style="margin-top: 0;">
+          Flowception seamlessly unifies multiple modalities by introducing context frames (i.e clean frames that are part of the visible sequence, which can potentially induce insertions).<br>
+          By providing a set of context frames, the model is able to learn how many new frames to insert in order to generate a coherent video.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
